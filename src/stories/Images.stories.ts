@@ -8,34 +8,32 @@ const meta = {
   render: () => {
     return `
   <section class="wrapper">
-    <p>I am zoomable</p>
     <img
       data-zoomable-image
       class="image"
       src="src/stories/assets/moon.webp"
       alt=""
     />
-    <p>I am also zoomable</p>
     <img
       data-zoomable-image
       class="image"
       src="src/stories/assets/sunset.webp"
       alt=""
     />
-    <p>I am not zoomable</p>
     <img
+      data-zoomable-image
       class="image"
       src="src/stories/assets/road.webp"
       alt=""
-      />
-      <p>I am also zoomable</p>
-      <img
+    />
+    <img
       data-zoomable-image
       class="image"
       src="src/stories/assets/bug.webp"
       alt=""
     />
-  </section>  
+  </section>
+  
 `
   },
   argTypes: {},
