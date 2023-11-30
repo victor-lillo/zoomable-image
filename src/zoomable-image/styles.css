@@ -1,0 +1,77 @@
+@media (hover: hover) {
+  img[data-zoomable-image]:hover {
+    cursor: zoom-in;
+  }
+}
+
+.zoom-modal[open] {
+  --button-position-top: -16px;
+  --button-position-right: -16px;
+  --image-max-height: 80vh;
+  --image-max-width: 90vw;
+  --image-width: auto;
+  --image-height: auto;
+
+  max-width: none;
+  max-height: none;
+  animation: zoom 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  overflow: visible;
+}
+
+.zoom-modal[open]::backdrop {
+  background: #000000ca;
+}
+
+.zoom-modal[open] .zoom-modal-button {
+  background: none;
+  background-color: var(--color-accent-3);
+  position: absolute;
+  right: var(--button-position-right);
+  top: var(--button-position-top);
+  padding: 0.3rem;
+  border: none;
+  border-radius: var(--border-radius-1);
+}
+
+@media (hover: hover) {
+  .zoom-modal-button:hover {
+    outline: var(--outline-focus-visible);
+  }
+}
+
+.zoom-modal[open] img {
+  border: 2px solid var(--color-primary-3);
+  border-radius: var(--border-radius-1);
+  object-fit: contain;
+  max-height: var(--image-max-height);
+  max-width: var(--image-max-width);
+  width: var(--image-width);
+  height: var(--image-height);
+}
+
+.zoom-modal--horizontal[open] {
+  --image-width: 96vw;
+  --button-position-right: 0px;
+  --button-position-top: -36px;
+}
+
+.zoom-modal--vertical[open] {
+  --image-height: 90vh;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
