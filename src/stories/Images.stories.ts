@@ -7,35 +7,35 @@ const meta = {
   title: 'Zoomable Image',
   render: () => {
     return `
-<section class="wrapper">
-  <p>I am zoomable</p>
-  <img
-    data-zoomable-image
-    class="image"
-    src="src/stories/assets/styling.png"
-    alt=""
-  />
-  <p>I am also zoomable</p>
-  <img
-    data-zoomable-image
-    class="image"
-    src="src/stories/assets/testing.png"
-    alt=""
-    />
-    <p>I am not zoomable</p>
+  <section class="wrapper">
+    <p>I am zoomable</p>
     <img
-    class="image"
-    src="src/stories/assets/assets.png"
-    alt=""
+      data-zoomable-image
+      class="image"
+      src="src/stories/assets/moon.webp"
+      alt=""
     />
     <p>I am also zoomable</p>
     <img
-    data-zoomable-image
-    class="image"
-    src="src/stories/assets/context.png"
-    alt=""
-  />
-</section>
+      data-zoomable-image
+      class="image"
+      src="src/stories/assets/sunset.webp"
+      alt=""
+    />
+    <p>I am not zoomable</p>
+    <img
+      class="image"
+      src="src/stories/assets/road.webp"
+      alt=""
+      />
+      <p>I am also zoomable</p>
+      <img
+      data-zoomable-image
+      class="image"
+      src="src/stories/assets/bug.webp"
+      alt=""
+    />
+  </section>  
 `
   },
   argTypes: {},
