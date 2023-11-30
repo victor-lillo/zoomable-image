@@ -4,7 +4,7 @@ import init from '../zoomable-image/index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Zoomable Image',
+  title: 'Zoomable Image',
   render: () => {
     return `
 <section class="wrapper">
