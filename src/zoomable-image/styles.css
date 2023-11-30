@@ -5,6 +5,7 @@
 }
 
 .zoom-modal[open] {
+  --border-radius-1: 6px;
   --button-position-top: -16px;
   --button-position-right: -16px;
   --image-max-height: 80vh;
@@ -26,7 +27,7 @@
 }
 
 .zoom-modal[open]::backdrop {
-  background: #000000ca;
+  background: #000000e4;
 }
 
 .zoom-modal[open] .zoom-modal-button {
@@ -47,8 +48,6 @@
 }
 
 .zoom-modal[open] img {
-  border: 2px solid var(--color-primary-3);
-  border-radius: var(--border-radius-1);
   object-fit: contain;
   max-height: var(--image-max-height);
   max-width: var(--image-max-width);
