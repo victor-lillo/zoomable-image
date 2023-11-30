@@ -21,15 +21,16 @@ const meta = {
     class="image"
     src="src/stories/assets/testing.png"
     alt=""
-  />
-  <p>I am not zoomable</p>
-  <img
+    />
+    <p>I am not zoomable</p>
+    <img
     class="image"
     src="src/stories/assets/assets.png"
     alt=""
-  />
-  <p>I am also zoomable</p>
-  <img
+    />
+    <p>I am also zoomable</p>
+    <img
+    data-zoomable-image
     class="image"
     src="src/stories/assets/context.png"
     alt=""
