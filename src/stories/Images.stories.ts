@@ -33,7 +33,6 @@ const meta = {
       alt=""
     />
   </section>
-  
 `
   },
   argTypes: {},
