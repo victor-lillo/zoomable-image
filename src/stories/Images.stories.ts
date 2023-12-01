@@ -17,19 +17,25 @@ const meta = {
     <img
       data-zoomable-image
       class="image"
+      src="src/stories/assets/bug.webp"
+      alt=""
+    />
+    <img
+      data-zoomable-image
+      class="image"
       src="src/stories/assets/sunset.webp"
       alt=""
     />
     <img
       data-zoomable-image
       class="image"
-      src="src/stories/assets/road.webp"
+      src="src/stories/assets/road-cropped.webp"
       alt=""
     />
     <img
       data-zoomable-image
       class="image"
-      src="src/stories/assets/bug.webp"
+      src="src/stories/assets/road.webp"
       alt=""
     />
   </section>
