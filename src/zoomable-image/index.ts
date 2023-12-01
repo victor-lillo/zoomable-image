@@ -7,7 +7,7 @@ const DATA = 'data-zoomable-image'
 const INDEX = 0.9
 
 function createModal($originalImage: HTMLImageElement) {
-  const { alt, aspectRatio, currentSrc, naturalHeight, naturalWidth } = getImageData($originalImage)
+  const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($originalImage)
 
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 
