@@ -1,50 +1,66 @@
 import './styles.css'
-const DATA = 'data-zoomable-image'
+import createCloseAnimation from './createCloseAnimation'
+import getImageData from './getImageData'
+import getNewSize from './getNewSizes'
 
-function createModal({ altText, ratio, src }: { altText: string; ratio: number; src: string }) {
+const DATA = 'data-zoomable-image'
+const INDEX = 0.9
+
+function createModal($originalImage: HTMLImageElement) {
+  const { alt, aspectRatio, currentSrc, naturalHeight, naturalWidth } = getImageData($originalImage)
+
+  const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
+
   const $modal = document.createElement('dialog')
   $modal.classList.add('zoom-modal')
-  if (ratio < 0.4) $modal.classList.add('zoom-modal--horizontal')
-  if (ratio > 1.6) $modal.classList.add('zoom-modal--vertical')
 
   const $image = document.createElement('img')
+  $image.setAttribute('src', currentSrc)
   $image.classList.add('zoom-modal-image')
-  $image.alt = altText ? altText : ' '
-  $image.setAttribute('src', src)
+  $image.alt = alt ? alt : ' '
+  $image.style.width = `${newWidth * INDEX}px`
+  $image.style.height = `${newHeight * INDEX}px`
 
   $modal.addEventListener('click', (e) => {
     const $clickedElement = e.target as HTMLDialogElement
-    if ($clickedElement.matches('dialog')) $clickedElement?.close()
+    if ($clickedElement.matches('dialog')) closeAfterAnimation()
   })
 
   const $closeButton = document.createElement('button')
   $closeButton.classList.add('zoom-modal-button')
   $closeButton.innerHTML = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path stroke="none" d="M0 0h24v24H0z"/><path d="M18 6 6 18M6 6l12 12"/></svg>`
   $closeButton?.addEventListener('click', () => {
-    $modal?.close()
+    closeAfterAnimation()
   })
   $modal.append($image, $closeButton)
   document.body.append($modal)
 
+  const animation = createCloseAnimation($modal)
+
+  function closeAfterAnimation() {
+    animation.play()
+    animation.onfinish = () => {
+      $modal?.close()
+    }
+  }
+
   $modal.showModal()
+  document.addEventListener('scroll', closeAfterAnimation)
 
   $modal.addEventListener('close', () => {
     $modal.remove()
+    document.removeEventListener('scroll', closeAfterAnimation)
   })
 }
 
 function handleClick(e: Event) {
   const element = e.target as HTMLImageElement
-  const currentSrc = element.currentSrc
-  const alt = element.alt
-  const naturalHeight = element.naturalHeight
-  const naturalWidth = element.naturalWidth
-  const ratio = naturalHeight / naturalWidth
-
-  createModal({ altText: alt, ratio, src: currentSrc })
+  createModal(element)
 }
 
 export default function init({ dataSelector = DATA }: { dataSelector?: string } = {}) {
   const $images = document.querySelectorAll(`img[${dataSelector}]`)
-  $images.forEach(($image) => $image.addEventListener('click', handleClick))
+  $images.forEach(($image) => {
+    $image.addEventListener('click', handleClick)
+  })
 }
