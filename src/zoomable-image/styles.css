@@ -6,14 +6,25 @@
 
 .zoom-modal,
 .zoom-modal::backdrop {
-  --zi-backdrop-color: #000000e4;
-  --zi-button-background: #bcbcbc;
-  --zi-button-color: black;
-  --zi-button-outline: 4px solid #dc143c;
-  --zi-button-position-right: -16px;
-  --zi-button-position-top: -16px;
-  --zi-max-width: 92vw;
-  --zi-max-height: 92vh;
+  /* Default */
+  --default-backdrop-color: #000000e4;
+  --default-button-background: #bcbcbc;
+  --default-button-color: black;
+  --default-button-outline: 4px solid #9000a3;
+  --default-button-position-right: -16px;
+  --default-button-position-top: -16px;
+  --default-max-height: 92vh;
+  --default-max-width: 92vw;
+
+  /* Overwritable */
+  --backdrop-color: var(--zi-backdrop-color, var(--default-backdrop-color));
+  --button-background: var(--zi-button-background, var(--default-button-background));
+  --button-color: var(--zi-button-color, var(--default-button-color));
+  --button-outline: var(--zi-button-outline, var(--default-button-outline));
+  --button-position-right: var(--zi-button-position-right, var(--default-button-position-right));
+  --button-position-top: var(--zi-button-position-top, var(--default-button-position-top));
+  --max-height: var(--zi-max-height, var(--default-max-height));
+  --max-width: var(--zi-max-width, var(--default-max-width));
 }
 
 .zoom-modal[open] {
@@ -29,24 +40,24 @@
 }
 
 .zoom-modal[open]::backdrop {
-  background: var(--zi-backdrop-color);
+  background: var(--backdrop-color);
 }
 
 .zoom-modal[open] img {
   object-fit: contain;
-  max-width: var(--zi-max-width);
-  max-height: var(--zi-max-height);
-  background: var(--zi-backdrop-color);
+  max-width: var(--max-width);
+  max-height: var(--max-height);
+  background: var(--backdrop-color);
   box-sizing: border-box;
 }
 
 .zoom-modal[open] .zoom-modal-button {
   display: flex;
   position: absolute;
-  background-color: var(--zi-button-background);
-  color: var(--zi-button-color);
-  right: var(--zi-button-position-right);
-  top: var(--zi-button-position-top);
+  background-color: var(--button-background);
+  color: var(--button-color);
+  right: var(--button-position-right);
+  top: var(--button-position-top);
   padding: 0.3rem;
   border: none;
   border-radius: 6px;
@@ -59,7 +70,7 @@
 }
 
 .zoom-modal-button:focus {
-  outline: var(--zi-button-outline);
+  outline: var(--button-outline);
 }
 
 @keyframes emerge {
