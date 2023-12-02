@@ -1,5 +1,3 @@
-const INDEX = 0.8
-
 export default function getNewSize({
   naturalHeight,
   naturalWidth,
@@ -19,9 +17,9 @@ export default function getNewSize({
   }
 
   if (widthRatio < heightRatio) {
-    sizes.newWidth = `${100 * INDEX}vw`
+    sizes.newWidth = `100vw`
   } else {
-    sizes.newHeight = `${100 * INDEX}vh`
+    sizes.newHeight = `100vh`
   }
 
   return sizes
