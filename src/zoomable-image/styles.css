@@ -4,8 +4,8 @@
   }
 }
 
-.zoom-modal,
-.zoom-modal::backdrop {
+.zi,
+.zi::backdrop {
   /* UI Settings */
   --backdrop-color: var(--zi-backdrop-color, #000000e4);
   --button-background: var(--zi-button-background, #bcbcbc);
@@ -17,7 +17,7 @@
   --image-max-width: var(--zi-image-max-width, 92vw);
 }
 
-.zoom-modal[open] {
+.zi[open] {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,11 +29,11 @@
   animation: emerge 0.3s ease-in-out;
 }
 
-.zoom-modal[open]::backdrop {
+.zi[open]::backdrop {
   background: var(--backdrop-color);
 }
 
-.zoom-modal[open] img {
+.zi[open] img {
   object-fit: contain;
   max-width: var(--image-max-width);
   max-height: var(--image-max-height);
@@ -41,7 +41,7 @@
   box-sizing: border-box;
 }
 
-.zoom-modal[open] .zoom-modal-button {
+.zi[open] .zi-button {
   display: flex;
   position: absolute;
   background-color: var(--button-background);
@@ -54,13 +54,23 @@
 }
 
 @media (hover: hover) {
-  .zoom-modal-button:hover {
+  .zi-button:hover {
     filter: brightness(0.8);
   }
 }
 
-.zoom-modal-button:focus {
+.zi-button:focus {
   outline: var(--button-outline);
+}
+
+.zi-visually-hidden {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 @keyframes emerge {
