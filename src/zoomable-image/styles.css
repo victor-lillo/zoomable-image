@@ -58,7 +58,7 @@
   }
 }
 
-.zoom-modal-button:focus-visible {
+.zoom-modal-button:focus {
   outline: var(--button-outline);
 }
 
