@@ -1,3 +1,5 @@
+const INDEX = 0.8
+
 export default function getNewSize({
   naturalHeight,
   naturalWidth,
@@ -11,15 +13,15 @@ export default function getNewSize({
   const widthRatio = viewportWidth / naturalWidth
   const heightRatio = viewportHeight / naturalHeight
 
-  const sizes = {
-    newWidth: viewportWidth,
-    newHeight: viewportHeight,
+  const sizes: Record<string, string | 'auto'> = {
+    newWidth: 'auto',
+    newHeight: 'auto',
   }
 
   if (widthRatio < heightRatio) {
-    sizes.newHeight = naturalHeight * widthRatio
+    sizes.newWidth = `${100 * INDEX}vw`
   } else {
-    sizes.newWidth = naturalWidth * heightRatio
+    sizes.newHeight = `${100 * INDEX}vh`
   }
 
   return sizes

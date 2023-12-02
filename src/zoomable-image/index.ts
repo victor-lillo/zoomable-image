@@ -4,7 +4,6 @@ import getImageData from './getImageData'
 import getNewSize from './getNewSizes'
 
 const DATA = 'data-zoomable-image'
-const INDEX = 0.9
 
 function createModal($originalImage: HTMLImageElement) {
   const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($originalImage)
@@ -18,8 +17,8 @@ function createModal($originalImage: HTMLImageElement) {
   $image.setAttribute('src', currentSrc)
   $image.classList.add('zoom-modal-image')
   $image.alt = alt ? alt : ' '
-  $image.style.width = `${newWidth * INDEX}px`
-  $image.style.height = `${newHeight * INDEX}px`
+  $image.style.width = newWidth
+  $image.style.height = newHeight
 
   $modal.addEventListener('click', (e) => {
     const $clickedElement = e.target as HTMLDialogElement
