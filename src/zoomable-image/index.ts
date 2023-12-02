@@ -4,8 +4,8 @@ import createModal from './utils/createModal'
 const DATA = 'data-zoomable-image'
 
 function handleClick(e: Event) {
-  const element = e.target as HTMLImageElement
-  createModal(element)
+  const $clickedImage = e.target as HTMLImageElement
+  createModal($clickedImage)
 }
 
 export default function init({ dataSelector = DATA }: { dataSelector?: string } = {}) {

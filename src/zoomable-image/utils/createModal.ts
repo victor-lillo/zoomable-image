@@ -2,8 +2,8 @@ import createCloseAnimation from './createCloseAnimation'
 import getImageData from './getImageData'
 import getNewSize from './getNewSizes'
 
-export default function createModal($originalImage: HTMLImageElement) {
-  const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($originalImage)
+export default function createModal($clickedImage: HTMLImageElement) {
+  const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($clickedImage)
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 
   const $modal = document.createElement('dialog')
