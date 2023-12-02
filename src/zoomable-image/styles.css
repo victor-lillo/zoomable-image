@@ -13,8 +13,8 @@
   --button-outline: var(--zi-button-outline, 4px solid #9000a3);
   --button-position-right: var(--zi-button-position-right, -16px);
   --button-position-top: var(--zi-button-position-top, -16px);
-  --max-height: var(--zi-max-height, 92vh);
-  --max-width: var(--zi-max-width, 92vw);
+  --image-max-height: var(--zi-image-max-height, 92vh);
+  --image-max-width: var(--zi-image-max-width, 92vw);
 }
 
 .zoom-modal[open] {
@@ -35,8 +35,8 @@
 
 .zoom-modal[open] img {
   object-fit: contain;
-  max-width: var(--max-width);
-  max-height: var(--max-height);
+  max-width: var(--image-max-width);
+  max-height: var(--image-max-height);
   background: var(--backdrop-color);
   box-sizing: border-box;
 }
@@ -48,7 +48,7 @@
   color: var(--button-color);
   right: var(--button-position-right);
   top: var(--button-position-top);
-  padding: 0.3rem;
+  padding: 0.2rem;
   border: none;
   border-radius: 6px;
 }
