@@ -1,6 +1,6 @@
 {
   "name": "zoomable-image",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "Light JavaScript library for creating a zoom image modal on click.",
   "scripts": {
@@ -33,6 +33,7 @@
   "files": [
     "dist"
   ],
+  "types": "./dist/index.d.ts",
   "main": "./dist/zoomable-image.umd.cjs",
   "module": "./dist/zoomable-image.js",
   "exports": {
