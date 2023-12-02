@@ -1,12 +1,12 @@
 {
   "name": "zoomable-image",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "Light JavaScript library for creating a zoom image modal on click.",
   "scripts": {
     "build": "tsc && vite build",
     "postbuild": "tsc --emitDeclarationOnly --declaration --skipLibCheck --outDir dist src/index.ts",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest"
@@ -41,6 +41,10 @@
     ".": {
       "import": "./dist/zoomable-image.js",
       "require": "./dist/zoomable-image.umd.cjs"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
     }
   },
   "eslintConfig": {
