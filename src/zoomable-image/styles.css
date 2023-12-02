@@ -6,11 +6,17 @@
 
 .zoom-modal,
 .zoom-modal::backdrop {
-  --backdrop-color: #000000e4;
+  --zi-backdrop-color: #000000e4;
+  --zi-button-background: #bcbcbc;
+  --zi-button-color: black;
+  --zi-button-outline: 4px solid #dc143c;
+  --zi-button-position-right: -16px;
+  --zi-button-position-top: -16px;
+  --zi-max-width: 92vw;
+  --zi-max-height: 92vh;
 }
 
 .zoom-modal[open] {
-  --backdrop-color: #000000e4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,30 +29,24 @@
 }
 
 .zoom-modal[open]::backdrop {
-  background: var(--backdrop-color);
+  background: var(--zi-backdrop-color);
 }
 
 .zoom-modal[open] img {
-  max-width: 100%;
-  height: auto;
   object-fit: contain;
-  background: var(--backdrop-color);
+  max-width: var(--zi-max-width);
+  max-height: var(--zi-max-height);
+  background: var(--zi-backdrop-color);
   box-sizing: border-box;
 }
 
 .zoom-modal[open] .zoom-modal-button {
-  --button-position-top: -16px;
-  --button-position-right: -16px;
-  --button-background: #bcbcbc;
-  --button-color: black;
-  --button-outline: 4px solid #dc143c;
-
   display: flex;
   position: absolute;
-  background-color: var(--button-background);
-  color: var(--button-color);
-  right: var(--button-position-right);
-  top: var(--button-position-top);
+  background-color: var(--zi-button-background);
+  color: var(--zi-button-color);
+  right: var(--zi-button-position-right);
+  top: var(--zi-button-position-top);
   padding: 0.3rem;
   border: none;
   border-radius: 6px;
@@ -59,7 +59,7 @@
 }
 
 .zoom-modal-button:focus {
-  outline: var(--button-outline);
+  outline: var(--zi-button-outline);
 }
 
 @keyframes emerge {
