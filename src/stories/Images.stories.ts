@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/html'
 import './image-grid.css'
-import init from '../zoomable-image/index'
+import { initZoomableImages } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -50,6 +50,6 @@ type Story = StoryObj
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   play: async () => {
-    init()
+    initZoomableImages()
   },
 }
