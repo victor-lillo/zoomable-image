@@ -1,6 +1,6 @@
 # Zoomable Image 🔍🖼️
 
-> Light JavaScript library for creating a zoom image modal on click.
+> Light JavaScript library (`<1Kb`) for creating a zoom image modal on click.
 
 ## Features
 
@@ -25,6 +25,8 @@ npm install zoomable-image
 
 ### `initZoomableImages(options)`
 
+> Gzipped weight: 946B
+
 This method will add **click event listeners** to the images in the document that contains the `dataSelector` attribute.
 
 It takes an object `options` as a parameter, which may contain the following keys:
@@ -42,6 +44,8 @@ initZoomableImages({ dataSelector: 'data-custom-selector' })
 ```
 
 ### `zoomImage(imageToZoom)`
+
+> Gzipped weight: 868B
 
 This method will **zoom the image when used**.
 
