@@ -11,7 +11,7 @@ export default function createModal({
   $clickedImage: HTMLImageElement
   scrollOffset?: number
 }) {
-  console.log('v.0.0.6', { $clickedImage, scrollOffset })
+  console.log('v.0.0.6', { scrollOffset })
   const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($clickedImage)
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 
@@ -48,6 +48,7 @@ export default function createModal({
 
   function handleScroll() {
     const currentScroll = document.documentElement.scrollTop
+    console.log({ currentScroll })
     if (currentScroll > scrollOffset) closeAfterAnimation($modal)
   }
 
