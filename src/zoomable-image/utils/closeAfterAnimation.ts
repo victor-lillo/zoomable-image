@@ -11,7 +11,11 @@ function createCloseAnimation($element: HTMLDialogElement) {
 
 export default function closeAfterAnimation($dialog: HTMLDialogElement) {
   const animation = createCloseAnimation($dialog)
-  animation.play()
+
+  requestAnimationFrame(() => {
+    animation.play()
+  })
+
   animation.onfinish = () => {
     $dialog?.close()
   }
