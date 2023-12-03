@@ -50,13 +50,15 @@ export default function createModal({
   function handleScroll() {
     const currentScroll = document.documentElement.scrollTop
     const distanceScrolled = Math.abs(currentScroll - initialScroll)
-    if (distanceScrolled > scrollOffset) closeAfterAnimation($modal)
+    if (distanceScrolled > scrollOffset) {
+      closeAfterAnimation($modal)
+      document.removeEventListener('scroll', handleScroll)
+    }
   }
 
   document.addEventListener('scroll', handleScroll)
 
   $modal.addEventListener('close', () => {
     $modal.remove()
-    document.removeEventListener('scroll', handleScroll)
   })
 }
