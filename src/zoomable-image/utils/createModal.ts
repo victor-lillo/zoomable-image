@@ -2,7 +2,15 @@ import closeAfterAnimation from './closeAfterAnimation'
 import getImageData from './getImageData'
 import getNewSize from './getNewSizes'
 
-export default function createModal($clickedImage: HTMLImageElement) {
+const SCROLLOFFSET = 150
+
+export default function createModal({
+  $clickedImage,
+  scrollOffset = SCROLLOFFSET,
+}: {
+  $clickedImage: HTMLImageElement
+  scrollOffset?: number
+}) {
   const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($clickedImage)
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 
@@ -18,7 +26,7 @@ export default function createModal($clickedImage: HTMLImageElement) {
 
   $modal.addEventListener('click', (e) => {
     const $clickedElement = e.target as HTMLDialogElement
-    if ($clickedElement.matches('dialog')) fnCloseAfterAnimation()
+    if ($clickedElement.matches('dialog')) closeAfterAnimation($modal)
   })
 
   const $closeButton = document.createElement('button')
@@ -32,19 +40,20 @@ export default function createModal($clickedImage: HTMLImageElement) {
   document.body.append($modal)
 
   $closeButton?.addEventListener('click', () => {
-    fnCloseAfterAnimation()
+    closeAfterAnimation($modal)
   })
 
   $modal.showModal()
 
-  function fnCloseAfterAnimation() {
-    closeAfterAnimation($modal)
+  function handleScroll() {
+    const currentScroll = document.documentElement.scrollTop
+    if (currentScroll > scrollOffset) closeAfterAnimation($modal)
   }
 
-  document.addEventListener('scroll', fnCloseAfterAnimation)
+  document.addEventListener('scroll', handleScroll)
 
   $modal.addEventListener('close', () => {
     $modal.remove()
-    document.removeEventListener('scroll', fnCloseAfterAnimation)
+    document.removeEventListener('scroll', handleScroll)
   })
 }
