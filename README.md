@@ -68,13 +68,24 @@ zoomImage(myImage)
 
 For customizing the UI, you can create these `custom properties` and add them in your `CSS root`. They will be used instead of the default value.
 
-| Custom Property              |    Default Value    | Definition                       |
-| ---------------------------- | :-----------------: | -------------------------------- |
-| `--zi-backdrop-color`        |     `#000000e4`     | Color of the backdrop background |
-| `--zi-button-background`     |      `#bcbcbc`      | Background color of the button   |
-| `--zi-button-color`          |       `black`       | Text color of the button         |
-| `--zi-button-outline`        | `4px solid #9000a3` | Border style of the button       |
-| `--zi-button-position-right` |       `-16px`       | Right position of the button     |
-| `--zi-button-position-top`   |       `-16px`       | Top position of the button       |
-| `--zi-image-max-height`      |       `92vh`        | Maximum image height             |
-| `--zi-image-max-width`       |       `92vw`        | Maximum image width              |
+| Custom Property              |    Default Value    | Definition                           |
+| ---------------------------- | :-----------------: | ------------------------------------ |
+| `--zi-backdrop-color`        |     `#000000e4`     | Color of the backdrop                |
+| `--zi-button-background`     |      `#bcbcbc`      | Background color of the button       |
+| `--zi-button-color`          |       `black`       | Text color of the button             |
+| `--zi-button-outline`        | `4px solid #9000a3` | Outline property style of the button |
+| `--zi-button-position-right` |       `-16px`       | Right position of the button         |
+| `--zi-button-position-top`   |       `-16px`       | Top position of the button           |
+| `--zi-image-border`          |       `none`        | Border property style of the image   |
+| `--zi-image-max-height`      |       `92vh`        | Maximum image height                 |
+| `--zi-image-max-width`       |       `92vw`        | Maximum image width                  |
+
+#### Why custom properties?
+
+Deriving settings to CSS helps maintain a **lighter bundle weight**.
+
+By adopting this approach, we invoke these methods just once and integrate the **custom properties within the desired scope**. This method offers increased flexibility and responsiveness.
+
+## Personal recommendation 📌
+
+Defer this library styles
