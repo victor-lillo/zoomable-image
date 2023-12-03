@@ -1,4 +1,4 @@
-import createCloseAnimation from './createCloseAnimation'
+import closeAfterAnimation from './closeAfterAnimation'
 import getImageData from './getImageData'
 import getNewSize from './getNewSizes'
 
@@ -18,7 +18,7 @@ export default function createModal($clickedImage: HTMLImageElement) {
 
   $modal.addEventListener('click', (e) => {
     const $clickedElement = e.target as HTMLDialogElement
-    if ($clickedElement.matches('dialog')) closeAfterAnimation()
+    if ($clickedElement.matches('dialog')) fnCloseAfterAnimation()
   })
 
   const $closeButton = document.createElement('button')
@@ -27,27 +27,24 @@ export default function createModal($clickedImage: HTMLImageElement) {
   $accessibilityTag.textContent = 'Close zoomed image'
   $closeButton.classList.add('zi-button')
   $closeButton.innerHTML = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path stroke="none" d="M0 0h24v24H0z"/><path d="M18 6 6 18M6 6l12 12"/></svg>`
-  $closeButton?.addEventListener('click', () => {
-    closeAfterAnimation()
-  })
   $closeButton.append($accessibilityTag)
   $modal.append($image, $closeButton)
   document.body.append($modal)
 
-  const closeAnimation = createCloseAnimation($modal)
-
-  function closeAfterAnimation() {
-    closeAnimation.play()
-    closeAnimation.onfinish = () => {
-      $modal?.close()
-    }
-  }
+  $closeButton?.addEventListener('click', () => {
+    fnCloseAfterAnimation()
+  })
 
   $modal.showModal()
-  document.addEventListener('scroll', closeAfterAnimation)
+
+  function fnCloseAfterAnimation() {
+    closeAfterAnimation($modal)
+  }
+
+  document.addEventListener('scroll', fnCloseAfterAnimation)
 
   $modal.addEventListener('close', () => {
     $modal.remove()
-    document.removeEventListener('scroll', closeAfterAnimation)
+    document.removeEventListener('scroll', fnCloseAfterAnimation)
   })
 }
