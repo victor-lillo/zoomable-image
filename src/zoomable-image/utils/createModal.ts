@@ -34,11 +34,11 @@ export default function createModal($clickedImage: HTMLImageElement) {
   $modal.append($image, $closeButton)
   document.body.append($modal)
 
-  const animation = createCloseAnimation($modal)
+  const closeAnimation = createCloseAnimation($modal)
 
   function closeAfterAnimation() {
-    animation.play()
-    animation.onfinish = () => {
+    closeAnimation.play()
+    closeAnimation.onfinish = () => {
       $modal?.close()
     }
   }
