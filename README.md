@@ -25,7 +25,7 @@ npm install zoomable-image
 
 ### `initZoomableImages(options)`
 
-> Gzipped weight: 946B
+> Gzipped weight: **946B**
 
 This method will add **click event listeners** to the images in the document that contains the `dataSelector` attribute.
 
@@ -34,6 +34,7 @@ It takes an object `options` as a parameter, which may contain the following key
 - **`dataSelector`** _String_: A string representing the data selector to use. Default value: `data-zoomable-image`.
 
 ```js
+import 'zoomable-image/dist/style.css'
 import { initZoomableImages } from 'zoomable-image'
 
 // And when your document is ready...
@@ -45,7 +46,7 @@ initZoomableImages({ dataSelector: 'data-custom-selector' })
 
 ### `zoomImage(imageToZoom)`
 
-> Gzipped weight: 868B
+> Gzipped weight: **868B**
 
 This method will **zoom the image when used**.
 
@@ -54,6 +55,7 @@ It takes one parameter:
 - **`$image`** _HTMLImageElement_: The HTML Image Element that will be zoomed.
 
 ```js
+import 'zoomable-image/dist/style.css'
 import { zoomImage } from 'zoomable-image'
 
 const myImage = document.getElementById('image-to-zoom')
