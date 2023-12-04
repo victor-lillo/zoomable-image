@@ -1,16 +1,18 @@
 # Zoomable Image 🔍🖼️
 
-> Light JavaScript library (`<1Kb`) for creating a zoom image modal on click.
+> Light and customizable JavaScript library (`~1Kb`) for creating a zoom image modal.
+
+With this library, we can easily created performant zoomed images on click or programmatically.
 
 ## Features
 
 - 📱 **Responsive:** dynamically scale according to viewport.
 - ⚖️ **Lightweight:** less than `1kb`.
 - 🚀 **Performant:** optimized to be fast.
-- 🔎 **Flexibility:** select the images you want to be zoomable.
-- 🌈 **Accessible:** screen reader and inclusivity designed.
-- 🖱 **Mouse, keyboard and gesture friendly:** click out the image, press `ESC` or scroll to close the zoom.
-- 🕵🏽 **Customization:** set your sizes, backdrop color & close button styles.
+- 🔎 **Flexibility:** select the images you want to be zoomable or do it programmatically.
+- 🌈 **Accessible:** designed and conceived to leave no one behind.
+- 🖱 **Mouse, keyboard and gesture friendly:** click out the image, click the close button, press `ESC` or scroll to close the zoom.
+- 🕵🏽 **Customization:** set your scroll offset, image sizes, backdrop color & close button styles.
 - 🌐 **Framework agnostic:** works with React, Vue, Svelte, Solid, MDX, etc.
 
 ## Installation ⚙️
@@ -23,16 +25,16 @@ npm install zoomable-image
 
 ## API 🤖
 
-### `initZoomableImages(options)`
+### `initZoomableImages(InitOptions)`
 
 > Gzipped weight: **946B**
 
 This method will add **click event listeners** to the images in the document that contains the `dataSelector` attribute.
 
-It takes an object `options` as a parameter, which may contain the following keys:
+It takes an object `InitOptions` as a parameter, which may contain the following keys:
 
 - **`dataSelector`** _String_: **Optional**. A string representing the data selector to use. Default value: `data-zoomable-image`.
-- **`scrollOffset`** _Number_: **Optional**. A number representing the scroll distance needed to close the modal. Default value: `150`.
+- **`scrollOffset`** _Number_: **Optional**. The scroll distance needed to close the modal. Default value: `150`.
 
 ```js
 import 'zoomable-image/dist/style.css'
@@ -41,23 +43,24 @@ import { initZoomableImages } from 'zoomable-image'
 // And when your document is ready...
 initZoomableImages()
 
-// Or with custom options...
+// Or with custom options..
 initZoomableImages({
   dataSelector: 'data-custom-selector',
   scrollOffset: 300,
 })
 ```
 
-### `zoomImage(imageToZoom)`
+### `zoomImage(imageToZoom, ZoomOptions)`
 
 > Gzipped weight: **868B**
 
 This method will **zoom the image when used**.
 
-It takes an object `options` as a parameter, which may contain the following keys:
+It takes 2 parameters:
 
-- **`$image`** _HTMLImageElement_: **Required**. The HTML Image Element that will be zoomed.
-- **`scrollOffset`** _Number_: **Optional**. A number representing the scroll distance needed to close the modal. Default value: `150`.
+- **`image`** _HTMLImageElement_: **Required**. The HTML Image Element that will be zoomed.
+- **`ZoomOptions`** _ZoomOptions_: **Optional**. Options to configure the image zoom.
+  - **`scrollOffset`** _number_: **Optional**. The scroll distance needed to close the modal. Default value: `150`.
 
 ```js
 import 'zoomable-image/dist/style.css'
@@ -66,7 +69,10 @@ import { zoomImage } from 'zoomable-image'
 const myImage = document.getElementById('image-to-zoom')
 
 // I am opening a modal with this image
-zoomImage({ $image: myImage })
+zoomImage(myImage)
+
+// Or with custom options..
+zoomImage(myImage, { scrollOffset: 300 })
 ```
 
 ## Visual settings 🎨
