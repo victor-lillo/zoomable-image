@@ -27,7 +27,7 @@ npm install zoomable-image
 
 ### `initZoomableImages(InitOptions)`
 
-> Gzipped weight: **946B**
+> Gzipped weight: `1KB`
 
 This method will add **click event listeners** to the images in the document that contains the `dataSelector` attribute.
 
@@ -52,7 +52,7 @@ initZoomableImages({
 
 ### `zoomImage(imageToZoom, ZoomOptions)`
 
-> Gzipped weight: **868B**
+> Gzipped weight: `948B`
 
 This method will **zoom the image when used**.
 
