@@ -87,9 +87,9 @@ For customizing the UI, you can create these `custom properties` and add them in
 | `--zi-button-outline`        | `4px solid #9000a3` | Outline property style of the button |
 | `--zi-button-position-right` |       `-16px`       | Right position of the button         |
 | `--zi-button-position-top`   |       `-16px`       | Top position of the button           |
-| `--zi-image-border`          |       `none`        | Border property style of the image   |
 | `--zi-image-max-height`      |       `92vh`        | Maximum image height                 |
 | `--zi-image-max-width`       |       `92vw`        | Maximum image width                  |
+| `--zi-image-outline`         |       `none`        | Outline property style of the image  |
 
 > [!NOTE]
 > Why custom properties?

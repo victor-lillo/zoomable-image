@@ -13,9 +13,9 @@
   --button-outline: var(--zi-button-outline, 4px solid #9000a3);
   --button-position-right: var(--zi-button-position-right, -16px);
   --button-position-top: var(--zi-button-position-top, -16px);
-  --image-border: var(--zi-image-border, none);
   --image-max-height: var(--zi-image-max-height, 92vh);
   --image-max-width: var(--zi-image-max-width, 92vw);
+  --image-outline: var(--zi-image-outline, none);
 }
 
 .zi[open] {
@@ -39,7 +39,7 @@
   max-width: var(--image-max-width);
   max-height: var(--image-max-height);
   background: var(--backdrop-color);
-  border: var(--image-border);
+  outline: var(--image-outline);
   box-sizing: border-box;
 }
 
