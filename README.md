@@ -31,7 +31,8 @@ This method will add **click event listeners** to the images in the document tha
 
 It takes an object `options` as a parameter, which may contain the following keys:
 
-- **`dataSelector`** _String_: A string representing the data selector to use. Default value: `data-zoomable-image`.
+- **`dataSelector`** _String_: **Optional**. A string representing the data selector to use. Default value: `data-zoomable-image`.
+- **`scrollOffset`** _Number_: **Optional**. A number representing the scroll distance needed to close the modal. Default value: `150`.
 
 ```js
 import 'zoomable-image/dist/style.css'
@@ -40,8 +41,11 @@ import { initZoomableImages } from 'zoomable-image'
 // And when your document is ready...
 initZoomableImages()
 
-// Or with a custom selector...
-initZoomableImages({ dataSelector: 'data-custom-selector' })
+// Or with custom options...
+initZoomableImages({
+  dataSelector: 'data-custom-selector',
+  scrollOffset: 300,
+})
 ```
 
 ### `zoomImage(imageToZoom)`
@@ -50,9 +54,10 @@ initZoomableImages({ dataSelector: 'data-custom-selector' })
 
 This method will **zoom the image when used**.
 
-It takes one parameter:
+It takes an object `options` as a parameter, which may contain the following keys:
 
-- **`$image`** _HTMLImageElement_: The HTML Image Element that will be zoomed.
+- **`$image`** _HTMLImageElement_: **Required**. The HTML Image Element that will be zoomed.
+- **`scrollOffset`** _Number_: **Optional**. A number representing the scroll distance needed to close the modal. Default value: `150`.
 
 ```js
 import 'zoomable-image/dist/style.css'
@@ -61,7 +66,7 @@ import { zoomImage } from 'zoomable-image'
 const myImage = document.getElementById('image-to-zoom')
 
 // I am opening a modal with this image
-zoomImage(myImage)
+zoomImage({ $image: myImage })
 ```
 
 ## Visual settings 🎨
