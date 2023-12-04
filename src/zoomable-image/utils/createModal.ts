@@ -1,3 +1,4 @@
+import { beforeAll } from 'vitest'
 import closeAfterAnimation from './closeAfterAnimation'
 import getImageData from './getImageData'
 import getNewSize from './getNewSizes'
@@ -37,7 +38,7 @@ export default function createModal($image: HTMLImageElement, options: ZoomOptio
   $closeButton.innerHTML = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path stroke="none" d="M0 0h24v24H0z"/><path d="M18 6 6 18M6 6l12 12"/></svg>`
   $closeButton.append($accessibilityTag)
   $modal.append($dialogImage, $closeButton)
-  document.body.append($modal)
+  $image.parentNode!.insertBefore($modal, $image.nextSibling)
 
   $closeButton?.addEventListener('click', () => {
     closeAfterAnimation($modal)
