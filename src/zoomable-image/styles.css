@@ -16,6 +16,11 @@
   --image-max-height: var(--zi-image-max-height, 92vh);
   --image-max-width: var(--zi-image-max-width, 92vw);
   --image-outline: var(--zi-image-outline, none);
+
+  @media (width < 48rem) {
+    --button-position-right: var(--zi-button-position-right, -10px);
+    --button-position-top: var(--zi-button-position-top, -10px);
+  }
 }
 
 .zi[open] {
