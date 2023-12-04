@@ -1,4 +1,3 @@
-import { beforeAll } from 'vitest'
 import closeAfterAnimation from './closeAfterAnimation'
 import getImageData from './getImageData'
 import getNewSize from './getNewSizes'
