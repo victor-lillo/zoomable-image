@@ -79,17 +79,17 @@ zoomImage(myImage, { scrollOffset: 300 })
 
 For customizing the UI, you can create these `custom properties` and add them in your `CSS root`. They will be used instead of the default value.
 
-| Custom Property              |    Default Value    | Definition                           |
-| ---------------------------- | :-----------------: | ------------------------------------ |
-| `--zi-backdrop-color`        |     `#000000e4`     | Color of the backdrop                |
-| `--zi-button-background`     |      `#bcbcbc`      | Background color of the button       |
-| `--zi-button-color`          |       `black`       | Text color of the button             |
-| `--zi-button-outline`        | `4px solid #9000a3` | Outline property style of the button |
-| `--zi-button-position-right` |       `-16px`       | Right position of the button         |
-| `--zi-button-position-top`   |       `-16px`       | Top position of the button           |
-| `--zi-image-max-height`      |       `92vh`        | Maximum image height                 |
-| `--zi-image-max-width`       |       `92vw`        | Maximum image width                  |
-| `--zi-image-outline`         |       `none`        | Outline property style of the image  |
+| Custom Property              |           Default Value           | Definition                           |
+| ---------------------------- | :-------------------------------: | ------------------------------------ |
+| `--zi-backdrop-color`        |            `#000000e4`            | Color of the backdrop                |
+| `--zi-button-background`     |             `#bcbcbc`             | Background color of the button       |
+| `--zi-button-color`          |              `black`              | Text color of the button             |
+| `--zi-button-outline`        |        `4px solid #9000a3`        | Outline property style of the button |
+| `--zi-button-position-right` | Desktop: `-16px`. Mobile: `-10px` | Right position of the button         |
+| `--zi-button-position-top`   | Desktop: `-16px`. Mobile: `-10px` | Top position of the button           |
+| `--zi-image-max-height`      |              `92vh`               | Maximum image height                 |
+| `--zi-image-max-width`       |              `92vw`               | Maximum image width                  |
+| `--zi-image-outline`         |              `none`               | Outline property style of the image  |
 
 > [!NOTE]
 > Why custom properties?
