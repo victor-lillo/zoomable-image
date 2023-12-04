@@ -54,7 +54,7 @@ initZoomableImages({
 
 > Gzipped weight: `948B`
 
-This method will **zoom the image when used**.
+This method will **zoom the image when used**. It generates a `dialog` HTML element and appends it as the **next sibling** to the original image.
 
 It takes 2 parameters:
 
@@ -98,7 +98,9 @@ For customizing the UI, you can create these `custom properties` and add them in
 >
 > Deriving settings to CSS helps maintain a **lighter bundle weight**.
 >
-> By adopting this approach, we invoke these methods just once and integrate the **custom properties within the desired scope**. This method offers increased flexibility and responsiveness.
+> By adopting this approach, we invoke these methods just once and integrate the **custom properties within the desired scope**. Remember the new image will be created as the next sibling to the original image.
+>
+> This method offers increased flexibility and responsiveness.
 
 ## Personal recommendation 📌
 
