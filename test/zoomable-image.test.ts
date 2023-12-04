@@ -37,7 +37,7 @@ describe('zoomImage works properly', () => {
     expect(dialog).toBeTruthy()
   })
 
-  test('add expected class in modal', () => {
+  test('adds expected class in modal', () => {
     const image = document.querySelector('img')!
     zoomImage(image)
     const dialog = document.querySelector('dialog')
@@ -62,7 +62,7 @@ describe('zoomImage works properly', () => {
 })
 
 describe('initZoomableImages works properly', () => {
-  test("doesn't create dialog on it", () => {
+  test("doesn't create dialog on init", () => {
     initZoomableImages()
     const dialog = document.querySelector('dialog')
     expect(dialog).toBeNull()
@@ -70,6 +70,38 @@ describe('initZoomableImages works properly', () => {
 
   test('creates dialog on click', () => {
     initZoomableImages()
+    const img = document.querySelector('img')
+    img?.click()
+    const dialog = document.querySelector('dialog')
+    expect(dialog).toBeTruthy()
+  })
+
+  test("doesn't create dialog on click changing data attributes", () => {
+    const customSelector = 'data-custom-selector'
+    document.body.innerHTML = `
+    <img
+      ${customSelector}
+      class="image"
+      src="src/stories/assets/moon.webp"
+      alt=""
+    />`
+    initZoomableImages()
+    const img = document.querySelector('img')
+    img?.click()
+    const dialog = document.querySelector('dialog')
+    expect(dialog).toBeNull()
+  })
+
+  test('creates dialog on click with custom selector', () => {
+    const customSelector = 'data-custom-selector'
+    document.body.innerHTML = `
+    <img
+      ${customSelector}
+      class="image"
+      src="src/stories/assets/moon.webp"
+      alt=""
+    />`
+    initZoomableImages({ dataSelector: customSelector })
     const img = document.querySelector('img')
     img?.click()
     const dialog = document.querySelector('dialog')
