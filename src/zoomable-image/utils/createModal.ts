@@ -4,13 +4,13 @@ import getNewSize from './getNewSizes'
 
 const SCROLLOFFSET = 150
 
-export default function createModal({
-  $image,
-  scrollOffset = SCROLLOFFSET,
-}: {
-  $image: HTMLImageElement
+type ZoomOptions = {
   scrollOffset?: number
-}) {
+}
+
+export default function createModal($image: HTMLImageElement, options: ZoomOptions = {}) {
+  const { scrollOffset = SCROLLOFFSET } = options
+
   const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($image)
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 

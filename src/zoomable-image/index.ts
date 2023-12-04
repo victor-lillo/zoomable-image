@@ -3,21 +3,17 @@ import createModal from './utils/createModal'
 
 const DATA = 'data-zoomable-image'
 
-export default function init({
-  dataSelector = DATA,
-  scrollOffset,
-}: {
+type InitOptions = {
   dataSelector?: string
   scrollOffset?: number
-} = {}) {
+}
+
+export default function init({ dataSelector = DATA, scrollOffset }: InitOptions = {}) {
   const $images = document.querySelectorAll(`img[${dataSelector}]`)
 
   $images.forEach(($image) => {
     $image.addEventListener('click', (e) => {
-      createModal({
-        $image: e.target as HTMLImageElement,
-        scrollOffset,
-      })
+      createModal(e.target as HTMLImageElement, { scrollOffset })
     })
   })
 }
