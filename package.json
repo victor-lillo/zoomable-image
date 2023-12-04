@@ -1,8 +1,8 @@
 {
   "name": "zoomable-image",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
-  "description": "Light JavaScript library for creating a zoom image modal on click.",
+  "description": "Light and customizable JavaScript library for creating a zoom image modal.",
   "scripts": {
     "build": "tsc && vite build",
     "postbuild": "tsc --emitDeclarationOnly --declaration --skipLibCheck --outDir dist src/index.ts",
