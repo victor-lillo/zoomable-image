@@ -91,12 +91,15 @@ For customizing the UI, you can create these `custom properties` and add them in
 | `--zi-image-max-height`      |       `92vh`        | Maximum image height                 |
 | `--zi-image-max-width`       |       `92vw`        | Maximum image width                  |
 
-#### Why custom properties?
-
-Deriving settings to CSS helps maintain a **lighter bundle weight**.
-
-By adopting this approach, we invoke these methods just once and integrate the **custom properties within the desired scope**. This method offers increased flexibility and responsiveness.
+> [!NOTE]
+> Why custom properties?
+>
+> ---
+>
+> Deriving settings to CSS helps maintain a **lighter bundle weight**.
+>
+> By adopting this approach, we invoke these methods just once and integrate the **custom properties within the desired scope**. This method offers increased flexibility and responsiveness.
 
 ## Personal recommendation 📌
 
-Defer this library styles
+To improve the Core Web Vitals of the page, I recommend **deferring the styles** of this library since they are non-critical.
