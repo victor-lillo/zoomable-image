@@ -25,15 +25,22 @@ npm install zoomable-image
 
 ## API 🤖
 
+This library works with `image` and `picture` elements.
+
+- The `alt` attribute will be transferred to the zoomed image.
+
+- The `src` attribute will generate the zoomed image. When using a `picture` element, the library will utilize the `currentSrc`.
+
+- Within your markup, you have the option to include a `data-zoomable-hd` attribute with an alternative image `src`. This image will replace the original image `src`. This is useful when you want to show a **better quality image** in the zoomed one.
+
 ### `initZoomableImages(InitOptions)`
 
 > Gzipped weight: `1KB`
 
-This method will add **click event listeners** to the images in the document that contains the `dataSelector` attribute.
+This method will add **click event listeners** to the images in the document that contains the `data-zoomable-image` attribute.
 
 It takes an object `InitOptions` as a parameter, which may contain the following keys:
 
-- **`dataSelector`** _String_: **Optional**. A string representing the data selector to use. Default value: `data-zoomable-image`.
 - **`scrollOffset`** _Number_: **Optional**. The scroll distance needed to close the modal. Default value: `150`.
 
 ```js
@@ -45,9 +52,20 @@ initZoomableImages()
 
 // Or with custom options..
 initZoomableImages({
-  dataSelector: 'data-custom-selector',
   scrollOffset: 300,
 })
+```
+
+Your HTML code may be like this one:
+
+```html
+<img
+  data-zoomable-image
+  data-zoomable-hd="../assets/high-definition.jpg"
+  class="image"
+  src="../assets/low-definition.webp"
+  alt=""
+/>
 ```
 
 ### `zoomImage(imageToZoom, ZoomOptions)`
