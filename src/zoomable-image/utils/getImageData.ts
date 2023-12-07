@@ -1,5 +1,4 @@
 export default function getImageData($image: HTMLImageElement) {
-  // TODO HD image & prefetch
   const currentSrc = $image.currentSrc
   const alt = $image.alt
   const naturalHeight = $image.naturalHeight
