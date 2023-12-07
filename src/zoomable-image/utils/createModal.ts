@@ -12,7 +12,7 @@ export default function createModal($image: HTMLImageElement, options: ZoomOptio
   const { scrollOffset = SCROLLOFFSET } = options
   const initialScroll = window.scrollY
 
-  const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($image)
+  const { alt, imageSrc, naturalHeight, naturalWidth } = getImageData($image)
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 
   const $modal = document.createElement('dialog')
@@ -20,7 +20,7 @@ export default function createModal($image: HTMLImageElement, options: ZoomOptio
   $modal.style.marginTop = `${initialScroll}px`
 
   const $dialogImage = document.createElement('img')
-  $dialogImage.setAttribute('src', currentSrc)
+  $dialogImage.setAttribute('src', imageSrc)
   $dialogImage.classList.add('zi-image')
   $dialogImage.alt = alt ? alt : ' '
   $dialogImage.style.width = newWidth
