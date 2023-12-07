@@ -35,7 +35,7 @@ const meta = {
     <img
       data-zoomable-image
       class="image"
-      src="src/stories/assets/road.webp"
+      src="src/stories/assets/nature.webp"
       alt=""
     />
   </section>
