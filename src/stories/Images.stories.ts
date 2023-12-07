@@ -17,6 +17,13 @@ const meta = {
     <img
       data-zoomable-image
       class="image"
+      src="src/stories/assets/drop-low.webp"
+      data-zoomable-hd="src/stories/assets/drop-hd.jpg"
+      alt=""
+    />
+    <img
+      data-zoomable-image
+      class="image"
       src="src/stories/assets/bug.webp"
       alt=""
     />
@@ -50,6 +57,6 @@ type Story = StoryObj
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   play: async () => {
-    initZoomableImages({ scrollOffset: 200 })
+    initZoomableImages({ scrollOffset: 150 })
   },
 }
