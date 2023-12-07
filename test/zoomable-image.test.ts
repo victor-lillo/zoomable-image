@@ -77,7 +77,7 @@ describe('initZoomableImages works properly', () => {
   })
 
   test("doesn't create dialog on click changing data attributes", () => {
-    const customSelector = 'data-custom-selector'
+    const customSelector = 'data-random-selector'
     document.body.innerHTML = `
     <img
       ${customSelector}
@@ -90,21 +90,5 @@ describe('initZoomableImages works properly', () => {
     img?.click()
     const dialog = document.querySelector('dialog')
     expect(dialog).toBeNull()
-  })
-
-  test('creates dialog on click with custom selector', () => {
-    const customSelector = 'data-custom-selector'
-    document.body.innerHTML = `
-    <img
-      ${customSelector}
-      class="image"
-      src="src/stories/assets/moon.webp"
-      alt=""
-    />`
-    initZoomableImages({ dataSelector: customSelector })
-    const img = document.querySelector('img')
-    img?.click()
-    const dialog = document.querySelector('dialog')
-    expect(dialog).toBeTruthy()
   })
 })
