@@ -17,7 +17,7 @@ export default function createModal($image: HTMLImageElement, options: ZoomOptio
 
   const $modal = document.createElement('dialog')
   $modal.classList.add('zi')
-  $modal.style.top = `${initialScroll}px`
+  $modal.style.marginTop = `${initialScroll}px`
 
   const $dialogImage = document.createElement('img')
   $dialogImage.setAttribute('src', currentSrc)

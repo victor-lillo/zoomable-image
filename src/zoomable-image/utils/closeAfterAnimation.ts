@@ -1,7 +1,11 @@
 function createCloseAnimation($element: HTMLDialogElement) {
   const keyframes = new KeyframeEffect(
     $element,
-    [{ transform: 'scale(1)' }, { transform: 'scale(0.5)' }],
+    [
+      { opacity: '1', transform: 'scale(1)' },
+      { opacity: '0', transform: 'scale(0)' },
+    ],
+
     { duration: 200, fill: 'forwards' }
   )
 
