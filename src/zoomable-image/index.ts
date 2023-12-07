@@ -18,7 +18,7 @@ function prefetch(e: Event) {
 
 export default function init({ scrollOffset }: InitOptions = {}) {
   const $images = document.querySelectorAll(`img[${DATA}]`) as NodeListOf<HTMLImageElement>
-  const $hdImages = [...$images].filter(($image) => $image.dataset[HD_DATA_CAMEL])
+  const $hdImages = Array.from($images).filter(($image) => $image.dataset[HD_DATA_CAMEL])
 
   $images.forEach(($image) => {
     $image.addEventListener('click', (e) => {
