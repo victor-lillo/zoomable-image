@@ -39,6 +39,8 @@ This library works with `image` and `picture` elements.
 
 This method will add **click event listeners** to the images in the document that contains the `data-zoomable-image` attribute.
 
+Moreover, it will pre-fetch images with the attribute `data-zoomable-hd` upon `mouseenter`, `touchstart`, and `focus` events, enhancing the overall user experience.
+
 It takes an object `InitOptions` as a parameter, which may contain the following keys:
 
 - **`scrollOffset`** _Number_: **Optional**. The scroll distance needed to close the modal. Default value: `150`.
