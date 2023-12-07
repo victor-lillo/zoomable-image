@@ -35,7 +35,7 @@ This library works with `image` and `picture` elements.
 
 ### `initZoomableImages(InitOptions)`
 
-> Gzipped weight: `1KB`
+> Gzipped weight: `1.27 kB`
 
 This method will add **click event listeners** to the images in the document that contains the `data-zoomable-image` attribute.
 
@@ -72,7 +72,7 @@ Your HTML code may be like this one:
 
 ### `zoomImage(imageToZoom, ZoomOptions)`
 
-> Gzipped weight: `948B`
+> Gzipped weight: `1 kB`
 
 This method will **zoom the image when used**. It generates a `dialog` HTML element and appends it as the **next sibling** to the original image.
 
