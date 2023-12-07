@@ -26,20 +26,29 @@
 .zi[open] {
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  translate: -50% 0;
   max-width: none;
   max-height: none;
-  border: none;
   padding: 0;
-  overflow: visible;
+  border: none;
+  background: none;
   animation: emerge 0.3s ease-in-out;
+  overflow: visible;
 }
 
 .zi[open]::backdrop {
   background: var(--backdrop-color);
 }
 
+.zi div {
+  position: relative;
+}
+
 .zi[open] img {
+  display: flex;
   object-fit: contain;
   max-width: var(--image-max-width);
   max-height: var(--image-max-height);

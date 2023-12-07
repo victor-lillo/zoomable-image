@@ -10,12 +10,14 @@ type ZoomOptions = {
 
 export default function createModal($image: HTMLImageElement, options: ZoomOptions = {}) {
   const { scrollOffset = SCROLLOFFSET } = options
+  const initialScroll = window.scrollY
 
   const { alt, currentSrc, naturalHeight, naturalWidth } = getImageData($image)
   const { newHeight, newWidth } = getNewSize({ naturalHeight, naturalWidth })
 
   const $modal = document.createElement('dialog')
   $modal.classList.add('zi')
+  $modal.style.top = `${initialScroll}px`
 
   const $dialogImage = document.createElement('img')
   $dialogImage.setAttribute('src', currentSrc)
@@ -36,7 +38,9 @@ export default function createModal($image: HTMLImageElement, options: ZoomOptio
   $closeButton.classList.add('zi-button')
   $closeButton.innerHTML = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path stroke="none" d="M0 0h24v24H0z"/><path d="M18 6 6 18M6 6l12 12"/></svg>`
   $closeButton.append($accessibilityTag)
-  $modal.append($dialogImage, $closeButton)
+  const $imageWrapper = document.createElement('div')
+  $imageWrapper.append($dialogImage, $closeButton)
+  $modal.append($imageWrapper)
   $image.parentNode!.insertBefore($modal, $image.nextSibling)
 
   $closeButton?.addEventListener('click', () => {
@@ -45,10 +49,8 @@ export default function createModal($image: HTMLImageElement, options: ZoomOptio
 
   $modal.showModal()
 
-  const initialScroll = document.documentElement.scrollTop
-
   function handleScroll() {
-    const currentScroll = document.documentElement.scrollTop
+    const currentScroll = window.scrollY
     const distanceScrolled = Math.abs(currentScroll - initialScroll)
     if (distanceScrolled > scrollOffset) {
       closeAfterAnimation($modal)
