@@ -58,7 +58,7 @@
   box-sizing: border-box;
 }
 
-.zi[open] .zi-button {
+.zi-button {
   display: flex;
   position: absolute;
   background-color: var(--button-background);
