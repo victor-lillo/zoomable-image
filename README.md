@@ -2,12 +2,12 @@
 
 > Light and customizable JavaScript library (`~1Kb`) for creating a zoom image modal.
 
-With this library, we can easily created performant zoomed images on click or programmatically.
+With this library, we can easily create performant zoomed images on click or programmatically.
 
-## Features
+## Features 🎯
 
 - 📱 **Responsive:** dynamically scale according to viewport.
-- ⚖️ **Lightweight:** less than `1kb`.
+- ⚖️ **Lightweight:** approximately `1 kb`.
 - 🚀 **Performant:** optimized to be fast.
 - 🔎 **Flexibility:** select the images you want to be zoomable or do it programmatically.
 - 🌈 **Accessible:** designed and conceived to leave no one behind.
