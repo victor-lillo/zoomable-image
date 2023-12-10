@@ -78,7 +78,7 @@
 }
 
 .zi-button:focus {
-  outline: var(--button-outline);
+  outline: var(--button-focus-outline);
 }
 
 .zi-visually-hidden {
