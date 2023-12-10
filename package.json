@@ -1,6 +1,6 @@
 {
   "name": "zoomable-image",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "module",
   "description": "Light and customizable JavaScript library for creating a zoom image modal.",
   "scripts": {
