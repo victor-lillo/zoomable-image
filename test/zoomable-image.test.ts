@@ -37,7 +37,7 @@ describe('zoomImage works properly', () => {
     expect(dialog).toBeTruthy()
   })
 
-  test('adds expected class in modal', () => {
+  test('adds expected class in dialog', () => {
     const image = document.querySelector('img')!
     zoomImage(image)
     const dialog = document.querySelector('dialog')
@@ -58,6 +58,35 @@ describe('zoomImage works properly', () => {
     const dialog = document.querySelector('dialog')
     const button = dialog?.querySelector('button')
     expect(button).toBeTruthy()
+  })
+
+  test('passes the alt attribute to the generated image', () => {
+    const altText = 'My alt text'
+    document.body.innerHTML = `
+    <img
+      data-zoomable-image
+      src="src/stories/assets/moon.webp"
+      alt="${altText}"
+    />`
+    const image = document.querySelector('img')!
+    zoomImage(image)
+    const dialogImage = document.querySelector('dialog img') as HTMLImageElement
+    expect(dialogImage?.alt === altText).toBeTruthy()
+  })
+
+  test('uses the "data-zoomable-hd" attribute as src', () => {
+    const hdImageSrc = 'src/stories/assets/drop-hd.jpg'
+    document.body.innerHTML = `
+    <img
+      data-zoomable-image
+      src="src/stories/assets/moon.webp"
+      data-zoomable-hd="${hdImageSrc}"
+      alt=""
+    />`
+    const image = document.querySelector('img')!
+    zoomImage(image)
+    const dialogImage = document.querySelector('dialog img') as HTMLImageElement
+    expect(dialogImage?.src.includes(hdImageSrc)).toBeTruthy()
   })
 })
 
