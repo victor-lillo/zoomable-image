@@ -12,7 +12,7 @@ With this library, we can easily create performant zoomed images on click or pro
 - 🔎 **Flexibility:** select the images you want to be zoomable or do it programmatically.
 - 🌈 **Accessible:** designed and conceived to leave no one behind.
 - 🖱 **Mouse, keyboard and gesture friendly:** click out the image, click the close button, press `ESC` or scroll to close the zoom.
-- 🕵🏽 **Customization:** set your scroll offset, image sizes, backdrop color & close button styles.
+- 🕵🏽 **Customization:** set your scroll offset, image sizes & close button styles.
 - 🌐 **Framework agnostic:** works with React, Vue, Svelte, Solid, MDX, etc.
 
 ## Installation ⚙️
@@ -102,7 +102,6 @@ For customizing the UI, you can create these `custom properties` and add them in
 | Custom Property              |           Default Value           | Definition                          |
 | ---------------------------- | :-------------------------------: | ----------------------------------- |
 | `--zi-backdrop-color`        |            `#000000e4`            | Color of the backdrop               |
-| `--zi-button-background`     |             `#bcbcbc`             | Background color of the button      |
 | `--zi-button-color`          |              `black`              | Text color of the button            |
 | `--zi-button-focus-outline`  |        `4px solid #9000a3`        | Outline focus style of the button   |
 | `--zi-button-outline`        |              `none`               | Outline style of the button         |
