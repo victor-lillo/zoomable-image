@@ -4,10 +4,8 @@
   }
 }
 
-.zi,
-.zi::backdrop {
-  /* UI Settings */
-  --backdrop-color: var(--zi-backdrop-color, #000000e4);
+/* UI Settings */
+.zi {
   --button-background: var(--zi-button-background, #bcbcbc);
   --button-color: var(--zi-button-color, black);
   --button-focus-outline: var(--zi-button-focus-outline, 4px solid #9000a3);
@@ -22,6 +20,11 @@
     --button-position-right: var(--zi-button-position-right, -10px);
     --button-position-top: var(--zi-button-position-top, -10px);
   }
+}
+
+.zi::backdrop {
+  /* Currently, backdrop doesn't inherit */
+  --backdrop-color: var(--zi-backdrop-color, #000000e4);
 }
 
 .zi[open] {
