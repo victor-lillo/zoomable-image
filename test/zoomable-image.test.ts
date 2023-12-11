@@ -60,28 +60,14 @@ describe('zoomImage works properly', () => {
     expect(button).toBeTruthy()
   })
 
-  test('passes the alt attribute to the generated image', () => {
-    const altText = 'My alt text'
-    document.body.innerHTML = `
-    <img
-      data-zoomable-image
-      src="src/stories/assets/moon.webp"
-      alt="${altText}"
-    />`
-    const image = document.querySelector('img')!
-    zoomImage(image)
-    const dialogImage = document.querySelector('dialog img') as HTMLImageElement
-    expect(dialogImage?.alt === altText).toBeTruthy()
-  })
-
   test('uses the "data-zoomable-hd" attribute as src', () => {
     const hdImageSrc = 'src/stories/assets/drop-hd.jpg'
     document.body.innerHTML = `
     <img
-      data-zoomable-image
-      src="src/stories/assets/moon.webp"
-      data-zoomable-hd="${hdImageSrc}"
-      alt=""
+    data-zoomable-image
+    src="src/stories/assets/moon.webp"
+    data-zoomable-hd="${hdImageSrc}"
+    alt=""
     />`
     const image = document.querySelector('img')!
     zoomImage(image)
@@ -109,15 +95,40 @@ describe('initZoomableImages works properly', () => {
     const customSelector = 'data-random-selector'
     document.body.innerHTML = `
     <img
-      ${customSelector}
-      class="image"
-      src="src/stories/assets/moon.webp"
-      alt=""
+    ${customSelector}
+    class="image"
+    src="src/stories/assets/moon.webp"
+    alt=""
     />`
     initZoomableImages()
     const img = document.querySelector('img')
     img?.click()
     const dialog = document.querySelector('dialog')
     expect(dialog).toBeNull()
+  })
+})
+
+describe('a11y', () => {
+  test('passes the alt attribute to the generated image', () => {
+    const altText = 'My alt text'
+    document.body.innerHTML = `
+    <img
+      data-zoomable-image
+      src="src/stories/assets/moon.webp"
+      alt="${altText}"
+    />`
+    const image = document.querySelector('img')!
+    zoomImage(image)
+    const dialogImage = document.querySelector('dialog img') as HTMLImageElement
+    expect(dialogImage?.alt === altText).toBeTruthy()
+  })
+
+  test('add hidden text in button', () => {
+    const image = document.querySelector('img')!
+    zoomImage(image)
+    const dialog = document.querySelector('dialog')!
+    const button = dialog.querySelector('button')
+    const a11yText = button?.textContent
+    expect(a11yText === 'Close zoomed image').toBeTruthy()
   })
 })
