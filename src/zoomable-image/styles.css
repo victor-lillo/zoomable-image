@@ -77,10 +77,10 @@
   .zi-button:hover {
     filter: brightness(0.8);
   }
-}
 
-.zi-button:focus {
-  outline: var(--button-focus-outline);
+  .zi-button:focus-visible {
+    outline: var(--button-focus-outline);
+  }
 }
 
 .zi-visually-hidden {
