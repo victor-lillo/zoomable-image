@@ -9,7 +9,7 @@
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "check:registry": " npm pack --dry-run zoomable-image",
+    "check:registry": "npm pack zoomable-image --dry-run",
     "test": "vitest"
   },
   "devDependencies": {
