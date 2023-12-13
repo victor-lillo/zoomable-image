@@ -51,13 +51,12 @@
 }
 
 .zi[open] img {
-  display: flex;
+  vertical-align: middle;
   object-fit: contain;
   max-width: var(--image-max-width);
   max-height: var(--image-max-height);
   background: var(--backdrop-color);
   outline: var(--image-outline);
-  box-sizing: border-box;
 }
 
 .zi-button {
