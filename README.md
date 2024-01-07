@@ -7,6 +7,7 @@ With this library, we can easily create performant zoomed images on click or pro
 ## Features 🎯
 
 - 📱 **Responsive:** dynamically scale according to viewport.
+- 🧩 **Typed:** fully typed for enhanced development experience.
 - ⚖️ **Lightweight:** approximately `1 kb`.
 - 🚀 **Performant:** optimized to be fast.
 - 🔎 **Flexibility:** select the images you want to be zoomable or do it programmatically.
