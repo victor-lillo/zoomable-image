@@ -1,5 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/html'
 import './image-grid.css'
+import './reset.css'
 import { initZoomableImages } from '../index'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
