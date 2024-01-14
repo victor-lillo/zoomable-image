@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "postbuild": "tsc --emitDeclarationOnly --declaration --skipLibCheck --outDir dist src/index.ts",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build && git push --tags",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "check:registry": "npm pack zoomable-image --dry-run",
