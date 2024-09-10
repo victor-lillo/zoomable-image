@@ -35,11 +35,9 @@
   "files": [
     "dist"
   ],
-  "types": "./dist/index.d.ts",
-  "main": "./dist/zoomable-image.umd.cjs",
-  "module": "./dist/zoomable-image.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/zoomable-image.js",
       "require": "./dist/zoomable-image.umd.cjs"
     },
@@ -48,6 +46,9 @@
       "require": "./dist/*.css"
     }
   },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/zoomable-image.umd.cjs",
+  "module": "./dist/zoomable-image.js",
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
